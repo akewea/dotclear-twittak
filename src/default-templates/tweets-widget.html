@@ -1,0 +1,54 @@
+<div id="twittak-widget">
+	
+	<h2>{{tpl:TwitterTitle}}</h2>
+	
+	<tpl:TweetsIf has_tweets="0">
+	<p class="no_tweet">{{tpl:lang No tweet yet...}}</p>
+	</tpl:TweetsIf>
+	
+	<tpl:Tweets>
+    <tpl:TweetsHeader>
+    <ul class="tweets">
+    </tpl:TweetsHeader>
+	
+	<li class="tweet {{tpl:TweetIfMe}} {{tpl:TweetIfFirst}} {{tpl:TweetIfOdd}}">
+	
+		<tpl:TweetsIf mine_only="0">
+		<a href="{{tpl:TwitterBaseURL}}/{{tpl:TweetScreenName}}" target="_blank" title="{{tpl:TweetName}} ({{tpl:TweetLocation}})">
+			<img src="{{tpl:TweetImage mini="1"}}" alt="{{tpl:TweetName}}" />
+		</a>
+		
+		<a href="{{tpl:TwitterBaseURL}}/{{tpl:TweetScreenName}}" target="_blank" title="{{tpl:TweetName}} ({{tpl:TweetLocation}})">
+			{{tpl:TweetName}}</a>
+		</tpl:TweetsIf>
+		
+		<div class="tweet-content">{{tpl:TweetContent}}</div>
+		
+		<p class="tweet-infos">{{tpl:lang at}} {{tpl:TweetDate format="%H:%M"}}  {{tpl:lang on}} {{tpl:TweetDate}}, {{tpl:lang from}} {{tpl:TweetSource}}<tpl:TweetIf reply="1"> {{tpl:lang in reply to}} 
+			<a href="{{tpl:TwitterBaseURL}}/{{tpl:TweetReplyName}}/status/{{tpl:TweetReplyId}}" title="">{{tpl:TweetReplyName}}</a>
+		</tpl:TweetIf></p>
+		
+	</li>
+	
+	<tpl:TweetsFooter>
+	</ul>
+	
+	<tpl:TweetsIf operator="or" show_tweets_page_link="1" show_twitter_link="1">
+	<ul class="twittak-links">
+	</tpl:TweetsIf>
+	
+		<tpl:TweetsIf show_tweets_page_link="1">
+		<li class="tweets-page-link"><a href="{{tpl:BlogURL}}/tweets/" title="{{tpl:lang View all tweets}}">{{tpl:lang All}}</a></li>
+		</tpl:TweetsIf>
+		<tpl:TweetsIf show_twitter_link="1">
+		<li class="twitter-link"><a href="{{tpl:TwitterBaseURL}}/{{tpl:TwitterAccount}}" title="{{tpl:lang Follow me on Twitter}}">{{tpl:lang Follow me on Twitter}}</a></li>
+		</tpl:TweetsIf>
+		
+	<tpl:TweetsIf operator="or" show_tweets_page_link="1" show_twitter_link="1">
+	</ul>
+	</tpl:TweetsIf>
+	
+	</tpl:TweetsFooter>
+	</tpl:Tweets>		
+	
+</div>

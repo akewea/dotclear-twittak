@@ -1,0 +1,50 @@
+msgid ""
+msgstr "Content-Type: text/plain; charset=UTF-8\n"
+
+msgid "Twitter base URL"
+msgstr "URL de base du site de twitter"
+
+msgid "Enable TwittAk tweets page"
+msgstr "Activer la page des tweets par TwittAk"
+
+msgid "Twitter ID for TwittAk tweets page"
+msgstr "Identifiant du compte twitter à afficher sur la page dédiée TwittAk"
+
+msgid "Page size for TwittAk tweets page"
+msgstr "Nombre de tweets affiché sur la page dédiée TwittAk"
+
+msgid "Show link to Twitter page"
+msgstr "Afficher un lien vers la page Twitter du compte"
+
+msgid "Tweets"
+msgstr "Tweets"
+
+msgid "My tweets"
+msgstr "Mes tweets"
+
+msgid "My last tweets"
+msgstr "Mes derniers tweets"
+
+msgid "Follow me on Twitter"
+msgstr "Suivez-moi sur Twitter"
+
+msgid "My Twitter feed"
+msgstr "Mon fil Twitter"
+
+msgid "No tweet yet..."
+msgstr "Pas encore de tweet..."
+
+msgid "All"
+msgstr "Tous"
+
+msgid "View all tweets"
+msgstr "Voir tous les tweets"
+
+msgid "from"
+msgstr "depuis"
+
+msgid "in reply to"
+msgstr "en réponse à"
+
+msgid "View original tweet"
+msgstr "Voir le tweet d'origine"

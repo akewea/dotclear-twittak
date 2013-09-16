@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="{{tpl:BlogLanguage}}" lang="{{tpl:BlogLanguage}}">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="MSSmartTagsPreventParsing" content="TRUE" />
+  <meta name="ROBOTS" content="{{tpl:BlogMetaRobots robots="NOINDEX"}}" />
+  
+  <title>{{tpl:lang Tweets}} - {{tpl:TwitterAccount encode_html="1"}}<tpl:PaginationIf start="0"> - {{tpl:lang page}} {{tpl:PaginationCurrent}}</tpl:PaginationIf></title>
+  <meta name="description" lang="{{tpl:BlogLanguage}}" content="{{tpl:lang Tweets}} - {{tpl:TwitterAccount encode_html="1"}}" />
+  <meta name="copyright" content="{{tpl:BlogCopyrightNotice encode_html="1"}}" />
+  <meta name="author" content="{{tpl:BlogEditor encode_html="1"}}" />
+  <meta name="date" scheme="W3CDTF" content="{{tpl:BlogUpdateDate iso8601="1"}}" />
+  
+  <link rel="schema.dc" href="http://purl.org/dc/elements/1.1/" />
+  <meta name="dc.title" lang="{{tpl:BlogLanguage}}" content="{{tpl:lang Tweets}} - {{tpl:TwitterAccount encode_html="1"}}<tpl:PaginationIf start="0"> - {{tpl:lang page}} {{tpl:PaginationCurrent}}</tpl:PaginationIf>" />
+  <meta name="dc.description" lang="{{tpl:BlogLanguage}}" content="{{tpl:CategoryDescription remove_html="1"}}" />
+  <meta name="dc.language" content="{{tpl:BlogLanguage}}" />
+  <meta name="dc.publisher" content="{{tpl:BlogEditor encode_html="1"}}" />
+  <meta name="dc.rights" content="{{tpl:BlogCopyrightNotice encode_html="1"}}" />
+  <meta name="dc.date" scheme="W3CDTF" content="{{tpl:BlogUpdateDate iso8601="1"}}" />
+  <meta name="dc.type" content="text" />
+  <meta name="dc.format" content="text/html" />
+  
+  <link rel="top" href="{{tpl:BlogURL}}" title="{{tpl:lang Home}}" />
+  <link rel="contents" href="{{tpl:BlogArchiveURL}}" title="{{tpl:lang Archives}}" />
+  
+  <link rel="alternate" type="application/rss+xml" title="Twitter RSS ({{tpl:TwitterAccount}})" href="{{tpl:TwitterFeedURL}}" />
+  
+  {{tpl:include src="_head.html"}}
+</head>
+
+<body class="dc-tweets">
+<div id="page">
+{{tpl:include src="_top.html"}}
+
+<div id="wrapper">
+
+<div id="main">
+	<div id="content">
+
+		<div id="content-info">
+			<tpl:TweetsIf mine_only="0">
+		  	<h2>{{tpl:lang Tweets}} - {{tpl:TwitterAccount encode_html="1"}}</h2>
+		  	</tpl:TweetsIf>
+		  	<tpl:TweetsIf mine_only="1">
+		  	<h2>{{tpl:lang My tweets}}</h2>
+		  	</tpl:TweetsIf>
+		</div>
+		
+		<tpl:TweetsIf has_tweets="0">
+		<p class="no_tweet">{{tpl:lang No tweet yet...}}</p>
+		</tpl:TweetsIf>
+	  
+	    <tpl:Tweets>
+	    <tpl:TweetsHeader></tpl:TweetsHeader>
+		
+		<div id="{{tpl:TweetId}}" class="tweet {{tpl:TweetIfMe}} {{tpl:TweetIfFirst}} {{tpl:TweetIfOdd}}">
+			
+			<tpl:TweetsIf mine_only="0">
+			<a href="{{tpl:TwitterBaseURL}}/{{tpl:TweetScreenName}}" target="_blank" title="{{tpl:TweetName}} ({{tpl:TweetLocation}})">
+				<img src="{{tpl:TweetImage mini="1"}}" alt="{{tpl:TweetName}}" />
+			</a>
+			</tpl:TweetsIf>
+			
+			
+			<tpl:TweetsIf mine_only="0">
+			<a href="{{tpl:TwitterBaseURL}}/{{tpl:TweetScreenName}}" target="_blank" title="{{tpl:TweetName}} ({{tpl:TweetLocation}})">
+				{{tpl:TweetName}}</a>
+			</tpl:TweetsIf>
+			
+			<div class="tweet-content">{{tpl:TweetContent}}</div>
+			
+			<p class="tweet-infos">{{tpl:TweetDate format="%H:%M"}}, {{tpl:TweetDate}} {{tpl:lang from}} {{tpl:TweetSource}}<tpl:TweetIf reply="1"> {{tpl:lang in reply to}} 
+			<a href="{{tpl:TwitterBaseURL}}/{{tpl:TweetReplyName}}/status/{{tpl:TweetReplyId}}" title="{{tpl:lang View original tweet}}">{{tpl:TweetReplyName}}</a>
+			</tpl:TweetIf></p>
+			
+		</div>
+		
+		<tpl:TweetsFooter>
+		
+		<tpl:TweetsIf show_twitter_link="1">
+		<ul class="twittak-links">
+			<li class="twitter-link"><a href="{{tpl:TwitterBaseURL}}/{{tpl:TwitterAccount}}" title="{{tpl:lang Follow me on Twitter}}">{{tpl:lang Follow me on Twitter}}</a></li>
+		</ul>
+		</tpl:TweetsIf>
+		
+		</tpl:TweetsFooter>
+		</tpl:Tweets>
+    	
+	</div>
+</div> <!-- End #main -->
+
+<div id="sidebar">
+  <div id="blognav">
+    {{tpl:Widgets type="nav"}}
+  </div> <!-- End #blognav -->
+  
+  <div id="blogextra">
+    {{tpl:Widgets type="extra"}}
+  </div> <!-- End #blogextra -->
+</div>
+
+</div> <!-- End #wrapper -->
+
+{{tpl:include src="_footer.html"}}
+</div> <!-- End #page -->
+</body>
+</html>
